@@ -202,7 +202,7 @@ body{
 	background:#222;
 }
 .logo{ 
-	padding-top: 20px;
+	padding: 10px 0;
 	position:relative;
 }
 .logo a:hover{ 
@@ -215,8 +215,7 @@ body{
 	color:#aaa;
 }
 .head{ 
-	min-width:960px;
-	width:95%;
+    width:960px;
 	margin:auto;
 	position:relative;
 }
@@ -226,8 +225,7 @@ body{
 	margin:auto;
 }
 .menu{	
-	list-style:none; 
-	margin-bottom:20px;
+	list-style:none;
 	padding:0 1%;
 	border:1px solid #555;
 	z-index:100000;
@@ -235,6 +233,9 @@ body{
 	background:#444;
 	-moz-border-radius:5px;
 	border-radius:5px;
+    margin-top: 60px;
+    width: 650px;
+    float: right;
 }
 .menu>li{
 	float:left; 		
@@ -356,9 +357,9 @@ body{
 .user-detail a		{ color: #FFC000; text-decoration: none; }
 .user-detail a:hover	{ color: #FFC000; text-decoration: underline; }
 h2			{ color: #333333; font-size: 18px; font-weight: normal; padding-top: 0px; margin-bottom: 10px; }
-.content-box			{ border-width: 1px; border-style: solid; border-color: #DDDDDD #DDDDDD #C4C4C4 #DDDDDD; background: #FFFFFF; margin-bottom: 30px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px;}
+.content-box			{ width: 960px; margin: auto; border-width: 1px; border-style: solid; border-color: #DDDDDD #DDDDDD #C4C4C4 #DDDDDD; background: #FFFFFF; margin-bottom: 30px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px;}
 .content-box .box-header	{ min-height: 36px; background: url('../images/admin/bck_header.png') top center repeat-x; position: relative; -moz-border-radius: 4px 4px 4px 4px; -webkit-border-radius: 4px 4px 4px 4px; border-radius: 4px 4px 4px 4px;}
-.content-box .box-body		{ border: 2px solid #FFFFFF; background: #F5F5F5; -moz-border-radius: 4px 4px 4px 4px; -webkit-border-radius: 4px 4px 4px 4px; border-radius: 4px 4px 4px 4px;}
+.content-box .box-body		{ min-height: 500px; border: 2px solid #FFFFFF; background: #F5F5F5; -moz-border-radius: 4px 4px 4px 4px; -webkit-border-radius: 4px 4px 4px 4px; border-radius: 4px 4px 4px 4px;}
 .content-box .box-wrap		{ padding: 20px 20px 10px 20px; }
 .box-header h2			{ color: #333333; line-height: 24px; margin-bottom: 0px; padding: 7px 20px 9px 20px; background: url('../images/admin/rule.gif') bottom left repeat-x; }
 .box-header .tabs		{ position: absolute; top: 7px; right: 10px; }
