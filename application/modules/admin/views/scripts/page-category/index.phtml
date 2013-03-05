@@ -1,0 +1,38 @@
+<div class="box-header clearfix">
+    <a class="button yellow" style="float:right; margin: 5px 10px 0 0"
+       href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'pageCategory', 'action' => 'add')); ?>">
+        Add a new category
+    </a>
+    <h2>Page Categories</h2>
+
+</div>
+<div class="box-wrap clearfix">
+    <div id="table">
+        <?php if ($this->countPageCategories > 0): ?>
+        <table class="style1" cellpadding="0" cellspacing="0" summary="">
+            <thead>
+            <tr>
+                <th width="95%">Title</th>
+                <th width="5%">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($this->pageCategories as $category): ?>
+                    <tr>
+                        <td>
+                            <?= $category->name; ?>
+                        </td>
+                        <td align='center'>
+                            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'pageCategory', 'action' => 'edit', 'category_id' => $category->category_id)); ?>">
+                                <img src="<?php echo $this->baseUrl(); ?>/images/admin/ico_edit_16.png" class="icon16 fl-space2" alt="" title="edit" />
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+
+        <?php endif; ?>
+
+    </div>
+</div>

@@ -20,11 +20,24 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		return $autoloader;
 	}
 	
-	protected function _initLayoutHelper()
+	protected function _initHelpers()
 	{
 		$this->bootstrap('frontController');
-		$layout = Zend_Controller_Action_HelperBroker::addHelper(
+
+		Zend_Controller_Action_HelperBroker::addHelper(
 			new Core_LayoutLoader());
+
+        Zend_Controller_Action_HelperBroker::addHelper(
+            new Core_Utils());
     }
+
+    protected function _initPlugins()
+    {
+        $this->bootstrap('frontController');
+        $front =  $this->getResource('FrontController');
+
+        $front->registerPlugin(new Core_Authentication());
+    }
+
 }
 

@@ -1,0 +1,46 @@
+<div class="box-header clearfix">
+    <a class="button yellow" style="float:right; margin: 5px 10px 0 0"
+       href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'page', 'action' => 'add')); ?>">
+        Add a new page
+    </a>
+    <h2><?= "Static pages list"; ?></h2>
+
+</div>
+<div class="box-wrap clearfix">
+    <div id="table">
+        <?php if ($this->countPages > 0): ?>
+        <table class="style1" cellpadding="0" cellspacing="0" summary="">
+            <thead>
+            <tr>
+                <th width="20%">Title</th>
+                <th width="20%">Category</th>
+                <th width="60%">Content</th>
+                <th width="5%">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($this->pages as $page): ?>
+                    <tr>
+                        <td>
+                            <?= $page->title; ?>
+                        </td>
+                        <td>
+                            <?= $page->category_name; ?>
+                        </td>
+                        <td>
+                            <?= $page->content; ?>
+                        </td>
+                        <td align='center'>
+                            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'page', 'action' => 'edit', 'page_id' => $page->id)); ?>">
+                                <img src="<?php echo $this->baseUrl(); ?>/images/admin/ico_edit_16.png" class="icon16 fl-space2" alt="" title="edit" />
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+
+        <?php endif; ?>
+
+    </div>
+</div>

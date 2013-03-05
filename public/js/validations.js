@@ -109,7 +109,7 @@ function validateAddProject(form) {
 //	result &= validateNumeric(form.find("#proportion"));
 //	result &= validateLength(form.find("#client_name"));
 	
-	//result &= validateLength(form.find("#description"), 300, 4000);
+	//result &= validateLength(form.find("#`description"), 300, 4000);
 	return result;	
 }
 

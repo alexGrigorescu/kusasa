@@ -64,12 +64,20 @@ input[type=text], input[type=password], textarea{
 	background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #C7C7C7;
     border-radius: 4px 4px 4px 4px;
-    width: 677px;
+    width: 740px;
     font-size: 13px;
     padding: 7px 10px;
     position: relative;
 }
-
+select{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #C7C7C7;
+    border-radius: 4px 4px 4px 4px;
+    width: 440px;
+    font-size: 13px;
+    padding: 7px 10px;
+    position: relative;
+}
 /* END resets ================*/
 
 /*================ clearfix */
@@ -156,7 +164,7 @@ a:hover{
 }
 .button:hover	{ color: #FFFFFF; text-decoration: none; }
 .button.green	{ background-color: #4DB800; }
-.button.yellow, .menu li a.button.yellow	{ background-color: #FFD800; color:#333; }
+.button.yellow, .menu li a.button.yellow	{ background-color:#01ad81; color:#222; }
 .button.red	{ background-color: #D80017; }
 .button.black	{ background-color: #000; }
 .button.blue	{ background-color: #00A5C4; }
@@ -165,8 +173,7 @@ a:hover{
 	margin:3px 0 0;
 }
 .menu li a.button.yellow:hover{
-	color:#333;
-	background-color: #FFD800;
+    background-color:#01ad81; color:#222;
 }
 .button.submit{
 	font-size:12px;
@@ -557,4 +564,32 @@ a.bt-style1:hover span, a.bt-msg:hover span{
 }
 .news-item h3 a:hover{
 	text-decoration:underline;
+}
+
+.formLabel{
+    text-align: right;
+    padding-right: 10px;
+}
+#dropzone{
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin: 5px 0;
+    width: 740px;
+}
+#dropzone > div{
+    border: 2px dashed #bbb;
+    -moz-border-radius: 5px;
+
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: center;
+    font: 12pt bold,'Vollkorn';
+    color: #bbb;
+
+}
+#previewImages img{
+    margin: 5px;
+    border: solid 1px #ccc;
 }

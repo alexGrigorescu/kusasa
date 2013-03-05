@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /kusasa/trunk/
+RewriteBase /
 
 
 RewriteRule ^\.htaccess$ - [F]

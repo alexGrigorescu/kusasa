@@ -36,45 +36,41 @@
         <div class="head_top">
             <div class="topbuts">
                 <ul class="clearfix">
-                    <li><a href="<?php echo $this->url(array('module' => 'default','controller' => 'index', 'action' => 'logout'), null, true); ?>" class="red">Logout</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'admin','controller' => 'login', 'action' => 'logout'), null, true); ?>" class="red">Logout</a></li>
                 </ul>
 
-<!--                <div class="user clearfix">-->
-<!--							<span class="user-detail">-->
-<!--								<span class="name">Welcome Admin</span>-->
-<!--								<span class="text">Logged as admin</span>						-->
-<!--							</span>-->
-<!--                </div>-->
             </div>
             <ul class="menu clearfix">
-                <li><a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'company','action'=>'index'), null, true); ?>">Companies</a></li>
-                <!--					<li>
-                                        <a class="drop" href="#">Lorem ipsum</a>
-                                            <div class="dropdown">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">Ala bala portocala</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">An tan te</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Care stie continuarea?</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                    </li>-->
-                <li><a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'feedback','action'=>'get'), null, true); ?>">Feedback</a></li>
-                <li><a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'news','action'=>'index'), null, true); ?>">News</a></li>
-
+                <li><a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'index','action'=>'dashboard'), null, true); ?>">Dashboard</a></li>
                 <li>
-                    <a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'forum','action'=>'index'), null, true); ?>">Forum</a>
+                    <a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'page','action'=>'index'), null, true); ?>">Pages</a>
                     <div class="dropdown">
                         <ul>
-                            <li><a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'forum','action'=>'list-categories'), null, true); ?>">Categories</a></li>
-                            <!--									<li><a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'forum','action'=>'list-topics'), null, true); ?>">Topics</a></li>-->
+                            <li>
+                                <a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'page','action'=>'index'), null, true); ?>">Pages</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'pageCategory','action'=>'index'), null, true); ?>">Categories</a>
+                            </li>
                         </ul>
                     </div>
+                </li>
+                <li>
+                    <a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'project','action'=>'index'), null, true); ?>">Projects</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li>
+                                <a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'project','action'=>'index'), null, true); ?>">Projects</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'projectCategory','action'=>'index'), null, true); ?>">Categories</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="<?php echo $this->url(array('module'=>'admin', 'controller'=>'menu','action'=>'index'), null, true); ?>">Menu</a>
                 </li>
 
                 <li class="back" style="float: right;"><a class="button yellow" href="<?php echo $this->baseUrl(); ?>">Back to site</a></li>

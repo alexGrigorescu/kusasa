@@ -45,7 +45,6 @@ if ( window.CKEDITOR )
 			html += '</p><p>With non compatible browsers, you should still be able to see and edit the contents (HTML) in a plain text field.</p>';
 
 			var alertsEl = document.getElementById( 'alerts' );
-			alertsEl && ( alertsEl.innerHTML = html );
 		};
 
 		var onload = function()

@@ -1,0 +1,47 @@
+<div class="box-header clearfix">
+    <h2>Add a new page</h2>
+</div>
+
+<div class="padding forum clearfix">
+	<div class="col-style1 width-665 form-style1 form-wider">
+		<form 
+			method="<?= $this->form->getMethod(); ?>"
+			action="<?= $this->form->getAction(); ?>">
+
+			<table cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="135" class='formLabel'>
+						<span class="label"><?= "Title"; ?>:</span>
+					</td>
+					<td>
+						<?= $this->form->getElement("page_title");?>
+					</td>
+				</tr>
+                <tr>
+                    <td width="135" class='formLabel'>
+                        <span class="label"><?= "Category"; ?>:</span>
+                    </td>
+                    <td>
+                        <?= $this->form->getElement("category_id");?>
+                    </td>
+                </tr>
+				<tr>
+					<td valign="top" class='formLabel'>
+						<span class="label"><?= "Content"; ?>: </span>
+					</td>
+					<td>
+						<?= $this->form->getElement("page_content");?>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class='formLabel'>
+						<a class="button yellow submit" style="margin-right:40px">
+							<span>&nbsp;&nbsp;&nbsp; <?= "Save"; ?> &nbsp;&nbsp;&nbsp;</span>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<div class="xl-space"></div>
+	</div>	
+</div>

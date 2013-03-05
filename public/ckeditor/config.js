@@ -29,7 +29,14 @@ CKEDITOR.editorConfig = function( config )
 	config.toolbar_Basic =
 	[
 		{ name: 'clipboard', items : [ 'Cut','Copy','PasteText','-','Undo','Redo' ] },
-		{ name: 'basicstyles', items : [ 'Bold','Italic','Underline','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','NumberedList','BulletedList','Outdent','Indent',] },
+		{ name: 'basicstyles', items : ['Image', 'Bold','Italic','Underline','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','NumberedList','BulletedList','Outdent','Indent','Styles','Format','FontSize'] },
 	];
-	config.width = '700';//'670';
+    config.height = '500px';//'670';
+    config.width = '750px';
+
+//    config.filebrowserBrowseUrl = 'kcfinder/browse.php?type=files';
+
+//    config.filebrowserUploadUrl = '/public/kcfinder/upload.php?type=files';
+    config.filebrowserImageBrowseUrl = '/public/kcfinder/browse.php';
+    config.filebrowserImageUploadUrl = '/public/kcfinder/upload.php';
 };

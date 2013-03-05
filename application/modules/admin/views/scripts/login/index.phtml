@@ -1,0 +1,23 @@
+<form
+    action="<?= $this->form->getAction(); ?>"
+    method="<?= $this->form->getMethod(); ?>"
+>
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>Username</th>
+            <td><?= $this->form->getElement("username"); ?></td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td><?= $this->form->getElement("password"); ?></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td valign="top"><input type="checkbox" class="checkbox-size" id="login-check" /><label for="login-check">Remember me</label></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><input type="submit" class="submit-login"  /></td>
+        </tr>
+    </table>
+</form>

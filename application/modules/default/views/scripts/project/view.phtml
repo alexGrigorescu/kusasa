@@ -1,0 +1,17 @@
+
+<div id="container" class="inner sub-page clearfix"> <!-- the inner pages have the "sub-page clearfix" classes added to the container div -->
+    <?php include_once(APPLICATION_PATH.'/modules/default/views/scripts/includes/breadcrumb.phtml'); ?>
+    <?php include_once(APPLICATION_PATH.'/modules/default/views/scripts/includes/sidebar.phtml'); ?>
+
+    <div class="col-style2 float-right">
+        <h1><?php echo $this->project['title']; ?></h1>
+        <?php echo $this->project['description']; ?>
+        <?php foreach($this->project['gallery'] as $image): ?>
+            <a rel="gallery" href="<?= $this->baseUrl("public/upload/images/".$image); ?>" title="">
+                <img style="float:left; width: 100px; height: 76px;" src="<?= $this->baseUrl("public/upload/thumbs/images/".$image); ?>"  alt="" />
+            </a>
+        <?php endforeach; ?>
+    </div>
+
+</div>
+<!-- ============ END container ============= -->

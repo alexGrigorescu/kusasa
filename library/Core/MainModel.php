@@ -1,14 +1,16 @@
 <?php 
-abstract class Core_MainController {
+abstract class Core_MainModel {
 
 	private $_dbTable;
 	private static $_db;
+    public $utils;
 
 	public function __construct($dbTable, $id = null)
 	{
+        $this->utils = new Core_Utils();
 		$this->setDbTable($dbTable);
 		if ($id) {
-			$this->getById($id);
+            $this->getById($id);
 		}		
 	}
 	
@@ -68,12 +70,12 @@ abstract class Core_MainController {
 		return $values;
 	}
 	
-	protected function getAttribute($attr)
+	public function getAttribute($attr)
 	{
 		return $this->$attr;
 	}
 
-	protected function getAttributes()
+	public function getAttributes()
 	{
 		return get_object_vars($this);
 	}
@@ -87,20 +89,20 @@ abstract class Core_MainController {
 		$this->setAttributes($result->current());
 		return true;
     }
-	
-	protected function hasAttribute($attr)
+
+    public function hasAttribute($attr)
 	{
 		return property_exists(get_class($this), $attr);
 	}
 	
-	protected function setAttribute($attr, $value) 
+	public function setAttribute($attr, $value)
 	{
 		if($this->hasAttribute($attr)) {
 			$this->$attr = $value;
 		}
 	}
 
-	protected function setAttributes($data) 
+    public function setAttributes($data)
 	{
 		foreach ($data as $key => $value) {
 			$this->setAttribute($key, $value);

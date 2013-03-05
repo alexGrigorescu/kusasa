@@ -1,1 +1,150 @@
-<?php echo( "front"); ?>
+<div id="container" class="inner">
+    <div class="welcome float-left clearfix">
+        <h1>Welcome to KUSASA</h1>
+        <p><strong>Kusasa  is a leading management company that offers a variety of services to companies and individuals. </strong></p>
+        <p>The range of  services we offer covers all aspects of construction from inception to completion.</p>
+        <p>At Kusasa we are not concerned about the size of the project but more about the standard of service we can provide to our clients. Our clients ranges from homeowners to big National companies.</p>
+
+        <a class="bt-style1" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 7));?>">
+            Find out more about us
+        </a>
+    </div>
+
+    <div class="slider float-right">
+        <ul id="slider">
+            <li class="panel1">
+                <!-- Note this caption is before the image, all others it is after -->
+                <div class="caption-bottom">ROTADOCK is a new, innovative and highly efficient multi level boat storage facility. <a href="#">READ ALL</a></div>
+                <img src="<?php echo $this->baseUrl();?>/upload/images/RotaDock/salterns_render_Front_.jpg" alt="home" />
+            </li>
+            <li class="panel2">
+                <img src="<?php echo $this->baseUrl();?>/upload/images/BorisBikes/boris_featured.jpg" alt="home" />
+                <div class="caption-bottom">Kusasa was appointed to manage the very complicated installation of the BORIS BIKES at the Southward Station site. <a href="#">READ ALL</a></div>
+            </li>
+            <li class="panel3">
+                <img src="<?php echo $this->baseUrl();?>/upload/images/IntelligentParking/Palis 7.jpg" alt="home" />
+                <div class="caption-bottom">Each of the two INTELLIGENT PARKING towers can hold 400 vehicles, which are parked at speeds of up to 2m/s. <a href="#">READ ALL</a></div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="xxl-space"></div>
+
+    <div class="box clearfix">
+        <div class="item">
+            <div class="icon"></div>
+            <h2>Our Services</h2>
+            <ul>
+                <li>
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 1));?>">
+                        Development facilitation
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 2));?>">
+                        Project & Grant Funding
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 3));?>">
+                        Project Feasibilities
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 4));?>">
+                        Design and Project Management
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 6));?>">
+                        Site Management
+                    </a>
+                </li>
+            </ul>
+            <a class="bt-style2" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 10));?>">
+                read more
+            </a>
+        </div>
+
+        <div class="sep1"></div>
+
+        <div class="item">
+            <div class="icon cup"></div>
+            <h2>Our Latest Products</h2>
+            <ul>
+                <li>
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 4));?>">
+                        Gatwick Multi Storey Car Park
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 5));?>">
+                        Retail Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Domestic Projects no. 1</a>
+                </li>
+                <li>
+                    <a href="#">Domestic Projects no. 2</a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 3));?>">
+                        Boris Bikes in London
+                    </a>
+                </li>
+
+            </ul>
+            <a class="bt-style2" href="#">see all projects</a>
+        </div>
+
+        <div class="sep1"></div>
+
+        <div class="item">
+            <div class="icon service"></div>
+            <h2>Exclusive products</h2>
+            <p>
+                Working with national and International clients proved we have the right skills to promote and deliver key products on an exclusive basis:
+            </p>
+            <ul>
+                <li>
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 2));?>">
+                        Mechanical Multi Storey Car Parks
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 1));?>">
+                        RotaDock
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Modular Care Units</a>
+                </li>
+
+            </ul>
+            <a class="bt-style2" href="#">see all exclusives</a>
+        </div>
+    </div>
+</div>
+<!-- ============ END container ============= -->
+
+
+<script type='text/javascript'>
+    $().ready(function() {
+        $('#slider')
+                .anythingSlider({
+                    buildNavigation: false,
+                    autoPlay       : true,
+                    buildStartStop : false,
+                    delay          : 5000
+                })
+                .anythingSliderFx({
+                    inFx: {
+                        '.caption-bottom' : { bottom:0, opacity: 1, duration: 600 },
+                    },
+                    outFx: {
+                        '.caption-bottom' : { bottom: -81, opacity: 0, duration: 600 },
+                    }
+                })
+    });
+</script>

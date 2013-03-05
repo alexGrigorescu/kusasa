@@ -1,0 +1,75 @@
+<div class="box-header clearfix">
+    <h2>Edit project</h2>
+</div>
+
+<div class="padding forum clearfix">
+	<div class="col-style1 width-665 form-style1 form-wider">
+		<form 
+			method="<?= $this->form->getMethod(); ?>"
+			action="<?= $this->form->getAction(); ?>">
+
+			<table cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="135" class='formLabel'>
+						<span class="label"><?= "Title"; ?>:</span>
+					</td>
+					<td>
+						<?= $this->form->getElement("project_title");?>
+					</td>
+				</tr>
+                <tr>
+                    <td width="135" class='formLabel'>
+                        <span class="label">Categories:</span>
+                    </td>
+                    <td>
+                        <?= $this->form->getElement("category_id");?>
+                    </td>
+                </tr>
+				<tr>
+					<td valign="top" class='formLabel'>
+						<span class="label"><?= "Description"; ?>: </span>
+					</td>
+					<td>
+						<?= $this->form->getElement("project_description");?>
+					</td>
+				</tr>
+
+                <tr">
+                    <td valign="top" class='formLabel'>
+                        <span class="label">Gallery: </span>
+                    </td>
+                    <td>
+                        <div id='dropzone'>
+                            <div>Click here and choose multiple files with the Ctrl/Command key.<br />
+                                Then right click on one of them and choose "Select"</div>
+                        </div>
+
+                        <div id='previewImages'></div>
+
+                        <?= $this->form->getElement("gallery");?>
+                    </td>
+                </tr>
+
+				<tr>
+					<td colspan="2" class='formLabel'>
+						<a class="button yellow submit" style="margin-right:40px">
+							<span>&nbsp;&nbsp;&nbsp; <?= "Save"; ?> &nbsp;&nbsp;&nbsp;</span>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<div class="xl-space"></div>
+	</div>	
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var pathToThumbs = '/public/upload/thumbs/images/';
+        var files = $('#gallery').val().split('|');
+
+        for (var i = 0; i < files.length; i++){
+            var img = $('<img>').attr('src', pathToThumbs + files[i]).appendTo('#previewImages');
+        }
+    });
+</script>

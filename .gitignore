@@ -16,6 +16,7 @@ local.properties
 .settings/
 .loadpath
 .idea/
+application/configs/local.ini
 
 # External tool builders
 .externalToolBuilders/

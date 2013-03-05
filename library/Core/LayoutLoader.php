@@ -9,11 +9,15 @@
 							 ->getInvokeArg('bootstrap');
 			$config = $bootstrap->getOptions();
 			$module = $this->getRequest()->getModuleName();
-			if (isset($config['resources']['layout']['layout'][$module])) {
-				$layoutScript = $config['resources']['layout']['layout'][$module];
-			}else{
-				$layoutScript = $config['resources']['layout']['layout']['default'];
-			}
+            $controller = $this->getRequest()->getControllerName();
+
+            if($controller == 'login'){
+                $layoutScript = $controller;
+            }elseif (isset($config['resources']['layout']['layout'][$module])) {
+                $layoutScript = $config['resources']['layout']['layout'][$module];
+            }else{
+                $layoutScript = $config['resources']['layout']['layout']['default'];
+            }
 			$this->getActionController()
 					 ->getHelper('layout')
 					 ->setLayout($layoutScript);
