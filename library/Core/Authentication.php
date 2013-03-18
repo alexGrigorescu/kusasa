@@ -30,6 +30,6 @@
             }
 
             Zend_Controller_Request_Abstract::setDispatched(false);
-            $this->_response->setRedirect('/admin/login/index');
+            Zend_Controller_Action_HelperBroker::getStaticHelper('redirector')->setGotoSimple('index', 'login', 'admin');
         }
     }

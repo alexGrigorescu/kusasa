@@ -29,6 +29,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
         Zend_Controller_Action_HelperBroker::addHelper(
             new Core_Utils());
+
+        Zend_Controller_Action_HelperBroker::addHelper(
+            new Core_Tree());
     }
 
     protected function _initPlugins()

@@ -3,6 +3,70 @@
 </div>
 
 <div class="box-wrap clearfix">
-<h3>Feature temporary disabled!</h3>
+
+
+        <link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/css/menu.css">
+        <!--[if lte IE 8]>
+        <script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/js/html5.js"></script>
+        <![endif]-->
+
+        <script src="<?php echo $this->baseUrl(); ?>/js/interface-1.2.js"></script>
+        <script src="<?php echo $this->baseUrl(); ?>/js/inestedsortable.js"></script>
+        <script src="<?php echo $this->baseUrl(); ?>/js/menu.js"></script>
+
+            <div id="main">
+
+                <form method="post" id="form-menu" action="<?php echo $this->url(array('module' => 'admin', 'controller' => 'menu', 'action' => 'save-position')); ?>">
+                    <div class="ns-row" id="ns-header">
+                        <div class="ns-actions">Actions</div>
+                        <div class="ns-class">Class</div>
+                        <div class="ns-url">URL</div>
+                        <div class="ns-title">Title</div>
+                    </div>
+
+                    <?php echo $this->menu; ?>
+
+
+                    <div id="ns-footer">
+                        <button type="submit" class="button green small" id="btn-save-menu">Update Menu</button>
+                    </div>
+                </form>
+            </div>
+            <aside>
+                <section class="box">
+                    <h2>Info</h2>
+                    <div>
+                        <p>Drag the menu list to re-order, and click <b>Update Menu</b> to save the position.</p>
+                        <p>To add a menu item, use the form below.</p>
+                    </div>
+                </section>
+                <section class="box">
+                    <h2>Add Menu Item</h2>
+                    <div>
+                        <form id="form-add-menu" method="post" action="<?php echo $this->url(array('module' => 'admin', 'controller' => 'menu', 'action' => 'add')); ?>">
+                            <p>
+                                <label for="menu-title">Title</label>
+                                <input type="text" name="title" id="menu-title">
+                            </p>
+                            <p>
+                                <label for="menu-url">URL</label>
+                                <input type="text" name="url" id="menu-url">
+                            </p>
+                            <p>
+                                <label for="menu-class">Class</label>
+                                <input type="text" name="class" id="menu-class">
+                            </p>
+                            <p class="buttons">
+                                <button id="add-menu" type="submit" class="button green small">Add Menu Item</button>
+                            </p>
+                        </form>
+                    </div>
+                </section>
+            </aside>
+            <div class="clear"></div>
+    <div id="loading">
+<!--        <img src="--><?php //echo $this->baseUrl(); ?><!--templates/images/ajax-loader.gif" alt="Loading">-->
+        Processing...
+    </div>
 
 </div>

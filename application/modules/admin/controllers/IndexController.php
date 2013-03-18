@@ -7,6 +7,7 @@ class Admin_IndexController extends Core_MainController {
     }
 
     public function indexAction(){
+
         if(Zend_Auth::getInstance()->hasIdentity()){
             $this->_forward('dashboard', 'index', 'admin');
         } else {
