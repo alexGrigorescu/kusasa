@@ -17,6 +17,18 @@ class ProjectController extends Core_MainController {
 
         $this->view->projects = $projectModel->getAll();
 
+        $latestProjects = $projectModel->getLatest();
+        $this->view->latestProjects = $latestProjects;
+    }
+
+    public function exclusiveAction(){
+        $projectModel = new Admin_Model_Project();
+
+        $latestProjects = $projectModel->getLatest();
+        $this->view->latestProjects = $latestProjects;
+
+        $exclusiveProjects = $projectModel->getExclusive();
+        $this->view->exclusiveProjects = $exclusiveProjects;
     }
 
 }

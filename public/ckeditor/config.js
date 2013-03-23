@@ -37,6 +37,6 @@ CKEDITOR.editorConfig = function( config )
 //    config.filebrowserBrowseUrl = 'kcfinder/browse.php?type=files';
 
 //    config.filebrowserUploadUrl = '/public/kcfinder/upload.php?type=files';
-    config.filebrowserImageBrowseUrl = '/public/kcfinder/browse.php';
-    config.filebrowserImageUploadUrl = '/public/kcfinder/upload.php';
+    config.filebrowserImageBrowseUrl = '/kcfinder/browse.php';
+    config.filebrowserImageUploadUrl = '/kcfinder/upload.php';
 };

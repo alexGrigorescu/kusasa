@@ -44,6 +44,29 @@ class Admin_Model_Project extends Core_MainModel
         return $projects;
     }
 
+    public function getLatest($asArray = false){
+        $latestCount = 5;
+        $results = $this->getDbTable()->getLatest($latestCount, $asArray);
+        $projects = array();
+        foreach($results as $result){
+            $projects[] = $this->_toArray($result);
+        }
+        return $projects;
+    }
+
+
+    public function getExclusive(){
+        $exclusive = 1;
+        $count = 3;
+        $results = $this->getDbTable()->getByCategory($count, $exclusive);
+        $projects = array();
+        foreach($results as $result){
+            $projects[] = $this->_toArray($result);
+        }
+        return $projects;
+    }
+
+
     public function _toArray($data){
         return array(
             'id'            => $data['id'],
@@ -51,7 +74,8 @@ class Admin_Model_Project extends Core_MainModel
             'description'   => $data['description'],
             'gallery'       => explode('|', $data['gallery']),
             'featured'      => $data['featured'],
-            'category_name' => $data['category_name'],
+            //'category_name' => $data['category_name'],
+            'category_id' => $data['category_id'],
             'excerpt'       => $this->utils->getExcerpt($data['description'], 300),
         );
     }

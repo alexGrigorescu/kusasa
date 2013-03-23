@@ -4,17 +4,17 @@
     <?php include_once(APPLICATION_PATH.'/modules/default/views/scripts/includes/sidebar.phtml'); ?>
 
     <div class="col-style2 float-right">
-        <h1>Our projects</h1>
+        <h1>Exclusive products</h1>
 
         <?php $count = 0; ?>
-        <?php foreach($this->projects as $project): ?>
+        <?php foreach($this->exclusiveProjects as $exclusiveProject): ?>
             <?php $odd = ($count++ % 2 == 0)? 'odd' : 'even'; ?>
             <div class="projects <?php echo $odd; ?> clearfix">
-                <img style="width: 246px; height: 165px;" src="<?php echo $this->baseUrl("upload/images/") . $project['featured'];?>" alt="" />
+                <img style="width: 246px; height: 165px;" src="<?php echo $this->baseUrl("upload/images/") . $exclusiveProject['featured'];?>" alt="" />
                 <div class="details">
-                    <h2><?php echo $project['title']; ?></h2>
-                    <p><?php echo $project['excerpt']; ?></p>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => $project['id'])); ?>">
+                    <h2><?php echo $exclusiveProject['title']; ?></h2>
+                    <p><?php echo $exclusiveProject['excerpt']; ?></p>
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'exclusive', 'project_id' => $exclusiveProject['id'])); ?>">
                         READ MORE &raquo;
                     </a>
                 </div>

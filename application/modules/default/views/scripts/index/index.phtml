@@ -72,29 +72,15 @@
             <div class="icon cup"></div>
             <h2>Our Latest Products</h2>
             <ul>
-                <li>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 4));?>">
-                        Gatwick Multi Storey Car Park
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 5));?>">
-                        Retail Projects
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Domestic Projects no. 1</a>
-                </li>
-                <li>
-                    <a href="#">Domestic Projects no. 2</a>
-                </li>
-                <li>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 3));?>">
-                        Boris Bikes in London
-                    </a>
-                </li>
-
+                <?php foreach($this->latestProjects as $latestProject): ?>
+                    <li>
+                        <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => $latestProject['id']));?>">
+                            <?php echo $latestProject['title']; ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
             </ul>
+
             <a class="bt-style2" href="#">see all projects</a>
         </div>
 
@@ -107,20 +93,13 @@
                 Working with national and International clients proved we have the right skills to promote and deliver key products on an exclusive basis:
             </p>
             <ul>
-                <li>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 2));?>">
-                        Mechanical Multi Storey Car Parks
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 1));?>">
-                        RotaDock
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Modular Care Units</a>
-                </li>
-
+                <?php foreach($this->exclusiveProjects as $exclusiveProject): ?>
+                    <li>
+                        <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => $exclusiveProject['id']));?>">
+                            <?php echo $exclusiveProject['title']; ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
             </ul>
             <a class="bt-style2" href="#">see all exclusives</a>
         </div>

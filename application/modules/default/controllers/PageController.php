@@ -11,6 +11,10 @@ class PageController extends Core_MainController {
         $pagesModel = new Admin_Model_Pages($pageId);
         $this->view->title = $pagesModel->title;
         $this->view->content = $pagesModel->content;
+
+        $projectModel = new Admin_Model_Project();
+        $latestProjects = $projectModel->getLatest();
+        $this->view->latestProjects = $latestProjects;
     }
 
 }
