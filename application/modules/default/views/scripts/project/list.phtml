@@ -14,7 +14,7 @@
                 <div class="details">
                     <h2><?php echo $project['title']; ?></h2>
                     <p><?php echo $project['excerpt']; ?></p>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => $project['id'])); ?>">
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => $project['id']), null, true); ?>">
                         READ MORE &raquo;
                     </a>
                 </div>

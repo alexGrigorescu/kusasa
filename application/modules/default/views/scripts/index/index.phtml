@@ -14,16 +14,16 @@
         <ul id="slider">
             <li class="panel1">
                 <!-- Note this caption is before the image, all others it is after -->
-                <div class="caption-bottom">ROTADOCK is a new, innovative and highly efficient multi level boat storage facility. <a href="#">READ ALL</a></div>
+                <div class="caption-bottom">ROTADOCK is a new, innovative and highly efficient multi level boat storage facility. <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 1), null, true);?>">READ ALL</a></div>
                 <img src="<?php echo $this->baseUrl();?>/upload/images/RotaDock/salterns_render_Front_.jpg" alt="home" />
             </li>
             <li class="panel2">
                 <img src="<?php echo $this->baseUrl();?>/upload/images/BorisBikes/boris_featured.jpg" alt="home" />
-                <div class="caption-bottom">Kusasa was appointed to manage the very complicated installation of the BORIS BIKES at the Southward Station site. <a href="#">READ ALL</a></div>
+                <div class="caption-bottom">Kusasa was appointed to manage the very complicated installation of the BORIS BIKES at the Southward Station site. <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 3), null, true);?>">READ ALL</a></div>
             </li>
             <li class="panel3">
                 <img src="<?php echo $this->baseUrl();?>/upload/images/IntelligentParking/Palis 7.jpg" alt="home" />
-                <div class="caption-bottom">Each of the two INTELLIGENT PARKING towers can hold 400 vehicles, which are parked at speeds of up to 2m/s. <a href="#">READ ALL</a></div>
+                <div class="caption-bottom">Each of the two INTELLIGENT PARKING towers can hold 400 vehicles, which are parked at speeds of up to 2m/s. <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => 2), null, true);?>">READ ALL</a></div>
             </li>
         </ul>
     </div>
@@ -36,32 +36,32 @@
             <h2>Our Services</h2>
             <ul>
                 <li>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 1));?>">
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 1), null, true);?>">
                         Development facilitation
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 2));?>">
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 2), null, true);?>">
                         Project & Grant Funding
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 3));?>">
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 3), null, true);?>">
                         Project Feasibilities
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 4));?>">
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 4), null, true);?>">
                         Design and Project Management
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 6));?>">
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 6), null, true);?>">
                         Site Management
                     </a>
                 </li>
             </ul>
-            <a class="bt-style2" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 10));?>">
+            <a class="bt-style2" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 10), null, true);?>">
                 read more
             </a>
         </div>
@@ -74,14 +74,14 @@
             <ul>
                 <?php foreach($this->latestProjects as $latestProject): ?>
                     <li>
-                        <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => $latestProject['id']));?>">
+                        <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => $latestProject['id']), null, true);?>">
                             <?php echo $latestProject['title']; ?>
                         </a>
                     </li>
                 <?php endforeach; ?>
             </ul>
 
-            <a class="bt-style2" href="#">see all projects</a>
+            <a class="bt-style2" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'list'), null, true);?>">see all projects</a>
         </div>
 
         <div class="sep1"></div>
@@ -95,13 +95,13 @@
             <ul>
                 <?php foreach($this->exclusiveProjects as $exclusiveProject): ?>
                     <li>
-                        <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => $exclusiveProject['id']));?>">
+                        <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => $exclusiveProject['id']), null, true);?>">
                             <?php echo $exclusiveProject['title']; ?>
                         </a>
                     </li>
                 <?php endforeach; ?>
             </ul>
-            <a class="bt-style2" href="#">see all exclusives</a>
+            <a class="bt-style2" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'exclusive'), null, true);?>">see all exclusives</a>
         </div>
     </div>
 </div>

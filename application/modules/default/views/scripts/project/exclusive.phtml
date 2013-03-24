@@ -14,7 +14,7 @@
                 <div class="details">
                     <h2><?php echo $exclusiveProject['title']; ?></h2>
                     <p><?php echo $exclusiveProject['excerpt']; ?></p>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'exclusive', 'project_id' => $exclusiveProject['id'])); ?>">
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => $exclusiveProject['id']), null, true); ?>">
                         READ MORE &raquo;
                     </a>
                 </div>

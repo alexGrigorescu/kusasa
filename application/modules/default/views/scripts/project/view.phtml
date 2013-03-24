@@ -7,8 +7,8 @@
         <h1><?php echo $this->project['title']; ?></h1>
         <?php echo $this->project['description']; ?>
         <?php foreach($this->project['gallery'] as $image): ?>
-            <a rel="gallery" href="<?= $this->baseUrl("public/upload/images/".$image); ?>" title="">
-                <img style="float:left; width: 100px; height: 76px;" src="<?= $this->baseUrl("public/upload/thumbs/images/".$image); ?>"  alt="" />
+            <a rel="gallery" href="<?= $this->baseUrl("upload/images/".$image); ?>" title="">
+                <img style="float:left; width: 100px; height: 76px;" src="<?= $this->baseUrl("upload/thumbs/images/".$image); ?>"  alt="" />
             </a>
         <?php endforeach; ?>
     </div>

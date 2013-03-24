@@ -54,7 +54,6 @@ class Admin_Model_Project extends Core_MainModel
         return $projects;
     }
 
-
     public function getExclusive(){
         $exclusive = 1;
         $count = 3;
@@ -66,7 +65,6 @@ class Admin_Model_Project extends Core_MainModel
         return $projects;
     }
 
-
     public function _toArray($data){
         return array(
             'id'            => $data['id'],
@@ -75,7 +73,7 @@ class Admin_Model_Project extends Core_MainModel
             'gallery'       => explode('|', $data['gallery']),
             'featured'      => $data['featured'],
             //'category_name' => $data['category_name'],
-            'category_id' => $data['category_id'],
+            'category_id'   => $data['category_id'],
             'excerpt'       => $this->utils->getExcerpt($data['description'], 300),
         );
     }

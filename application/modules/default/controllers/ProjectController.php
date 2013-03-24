@@ -10,6 +10,16 @@ class ProjectController extends Core_MainController {
         $projectId = $this->_getParam('project_id');
         $projectModel = new Admin_Model_Project($projectId);
         $this->view->project = $projectModel->_toArray($projectModel->getAttributes());
+        $this->view->title = $projectModel->title;
+
+        $latestProjects = $projectModel->getLatest();
+        $this->view->latestProjects = $latestProjects;
+
+        $this->view->projectID = $projectId;
+        $actionId = $this->_getParam('action');
+        $this->view->actionID = $actionId;
+        $controllerId = $this->_getParam('controller');
+        $this->view->controllerID = $controllerId;
     }
 
     public function listAction(){
@@ -19,6 +29,14 @@ class ProjectController extends Core_MainController {
 
         $latestProjects = $projectModel->getLatest();
         $this->view->latestProjects = $latestProjects;
+
+        $projectId = $this->_getParam('project_id');
+        $this->view->projectID = $projectId;
+        $this->view->action;
+        $actionId = $this->_getParam('action');
+        $this->view->actionID = $actionId;
+        $controllerId = $this->_getParam('controller');
+        $this->view->controllerID = $controllerId;
     }
 
     public function exclusiveAction(){
@@ -29,6 +47,13 @@ class ProjectController extends Core_MainController {
 
         $exclusiveProjects = $projectModel->getExclusive();
         $this->view->exclusiveProjects = $exclusiveProjects;
+
+        $projectId = $this->_getParam('project_id');
+        $this->view->projectID = $projectId;
+        $actionId = $this->_getParam('action');
+        $this->view->actionID = $actionId;
+        $controllerId = $this->_getParam('controller');
+        $this->view->controllerID = $controllerId;
     }
 
 }

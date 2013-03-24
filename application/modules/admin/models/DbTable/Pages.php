@@ -15,4 +15,14 @@ class Admin_Model_DbTable_Pages extends Zend_Db_Table_Abstract
 
         return ($toArray)? $this->fetchAll($select)->toArray() : $this->fetchAll($select);
     }
+
+    public function getServices($toArray = false){
+        $select = $this->select()
+            ->setIntegrityCheck(false)
+            ->from(array('p' => 'pages'), array('p.*'))
+            ->where('p.category_id = 1')
+            ->order(array('p.id ASC'));
+
+        return ($toArray)? $this->fetchAll($select)->toArray() : $this->fetchAll($select);
+    }
 }

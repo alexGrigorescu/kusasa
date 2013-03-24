@@ -3,64 +3,43 @@
         <h5>Site sections</h5>
         <ul>
             <li>
-                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 7));?>">
+                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 7), null, true);?>">
                     About Kusasa
                 </a>
             </li>
             <li>
-                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 10));?>">
+                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 10), null, true);?>">
                     Services
                 </a>
+                <?php if($this->controllerID == 'page' && ($this->pageID == 10 || ($this->pageID <= 6 && $this->pageID >= 0))): ?>
                 <ul>
-                    <li>
-                        <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 1));?>">
-                            Development facilitation
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 2));?>">
-                            Project & Grant Funding
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 3));?>">
-                            Project Feasibilities
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 4));?>">
-                            Design Management
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 5));?>">
-                            Project Management
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 6));?>">
-                            Site Management
-                        </a>
-                    </li>
+                    <?php foreach($this->services as $service): ?>
+                        <li>
+                            <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => $service['id']), null, true);?>">
+                                <?php echo $service['title']; ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
+                <?php endif; ?>
             </li>
             <li>
-                <a href="#">
+                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'list'), null, true);?>">
                     Our projects
                 </a>
             </li>
             <li>
-                <a href="#" style='width: 140px'>
+                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'exclusive'), null, true);?>" style='width: 140px'>
                     Exclusive Products
                 </a>
             </li>
             <li>
-                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 8));?>">
+                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 8), null, true);?>">
                     Meet the Team
                 </a>
             </li>
             <li>
-                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 9));?>">
+                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 9), null, true);?>">
                     Contact us
                 </a>
             </li>
@@ -74,14 +53,14 @@
         <ul>
             <?php foreach($this->latestProjects as $latestProject): ?>
                 <li>
-                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => $latestProject['id']));?>">
+                    <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'view', 'project_id' => $latestProject['id']), null, true);?>">
                         <?php echo $latestProject['title']; ?>
                     </a>
                 </li>
             <?php endforeach; ?>
         </ul>
         <div class="space"></div>
-        <a class="padding-l18" href="#">See all the projects</a>
+        <a class="padding-l18" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'list'), null, true);?>">See all the projects</a>
     </div> <!-- END related stuff -->
 
 </div>
