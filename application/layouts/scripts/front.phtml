@@ -160,21 +160,13 @@
 
                     <h5>Browse our services</h5>
                     <ul>
-                        <li>
-                            <a href="#">Finding sites for development</a>
-                        </li>
-                        <li>
-                            <a href="#">Feasibilities</a>
-                        </li>
-                        <li>
-                            <a href="#">Design Management</a>
-                        </li>
-                        <li>
-                            <a href="#">Construction Management</a>
-                        </li>
-                        <li>
-                            <a href="#">Financial Management</a>
-                        </li>
+                        <?php foreach($this->services as $service): ?>
+                            <li>
+                                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => $service['id']), null, true);?>">
+                                    <?php echo $service['title']; ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
 

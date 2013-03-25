@@ -1,58 +1,37 @@
-<!--<div class="breadcrumb">
-    <ul>
-        <li>
-            You are here:
-        </li>
-        <li>
-            <a href="#">Home »</a>
-        </li>
-        <li>
-            <a href="#">Services »</a>
-        </li>
-        <li class="current">
-            <a href="#">Inner page</a>
-        </li>
-    </ul>
-</div>-->
-
 <?php
 
-//$pageId = $this->pageID;
 $categoryId = $this->categoryID;
 $actionId = $this->actionID;
 $projectId = $this->projectID;
 $pageTitle = $this->title;
 $controllerId = $this->controllerID;
 
+$home = $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index'), null, true);
+$projects = $this->url(array('module' => 'default', 'controller' => 'project', 'action' => 'list'), null, true);
+$services = $this->url(array('module' => 'default', 'controller' => 'page', 'action' => 'view', 'page_id' => 10), null, true);
+
 $breadcrumb = "<div class=\"breadcrumb\">" .
     "<ul>" .
     "<li>You are here:<br/></li>" .
-    "<li><a href=\"#\">Home </a></li>";
+    "<li><a href=\"$home\">Home </a></li>";
 
 if($controllerId == 'page'){
     if($actionId == 'view'){
-        if($categoryId == 1){
-            $breadcrumb .=  "<li><a href=\"#\">» Services </a></li>";
-        }
-        $breadcrumb .=   "<li class=\"current\"><a href=\"#\">» " . $pageTitle . "</a></li>";
+        if($categoryId == 1)
+            $breadcrumb .=  "<li><a href=\"$services\">» Services </a></li>";
+        $breadcrumb .=   "<li class=\"current\">» " . $pageTitle . "</a></li>";
     }
 }
 
 if($controllerId == 'project'){
-    if($actionId == 'list'){
-        $breadcrumb .=  "<li class=\"current\"><a href=\"#\">» Our Projects </a></li>";
-    }
+    if($actionId == 'list')
+        $breadcrumb .=  "<li class=\"current\">» Our Projects </a></li>";
     if($actionId == 'view'){
-        $breadcrumb .=   "<li class=\"current\"><a href=\"#\">» " . $pageTitle . "</a></li>";
+        $breadcrumb .=   "<li><a href=\"$projects\">» All Projects </a></li>";
+        $breadcrumb .=   "<li class=\"current\">» " . $pageTitle . "</a></li>";
     }
-    if($actionId == 'exclusive'){
-        if($projectId == '')
-            $breadcrumb .=  "<li class=\"current\"><a href=\"#\">» Exclusive Products </a></li>";
-        else{
-            $breadcrumb .=  "<li><a href=\"#\">» Exclusive Products </a></li>";
-            $breadcrumb .=  "<li class=\"current\"><a href=\"#\">» " . $pageTitle .  "</a></li>";
-        }
-    }
+    if($actionId == 'exclusive')
+        $breadcrumb .=  "<li class=\"current\">» Exclusive Products </a></li>";
 }
 
 $breadcrumb .= "</div>";

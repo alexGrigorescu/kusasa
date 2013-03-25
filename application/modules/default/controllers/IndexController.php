@@ -9,6 +9,11 @@ class IndexController extends Core_MainController {
 
         $exclusiveProjects = $projectModel->getExclusive();
         $this->view->exclusiveProjects = $exclusiveProjects;
+
+        $pageId = $this->_getParam('page_id');
+        $pagesModel = new Admin_Model_Pages($pageId);
+        $services = $pagesModel->getServices();
+        $this->view->services = $services;
     }
 
 }
